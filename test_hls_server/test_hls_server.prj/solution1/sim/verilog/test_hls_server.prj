@@ -1,0 +1,7 @@
+sv work "glbl.v"
+sv xil_defaultlib "AESL_autofifo_output_V.v"
+sv xil_defaultlib "test_hls_server.v"
+sv xil_defaultlib "AESL_autofifo_input_V.v"
+sv xil_defaultlib "Block_proc24.v"
+sv xil_defaultlib "test_hls_server.autotb.v"
+

@@ -1,0 +1,7 @@
+Running: xsim.dir/test_hls_server/xsimk -simmode gui -wdb test_hls_server.wdb -simrunnum 0 -socket 46955
+Design successfully loaded
+Design Loading Memory Usage: 26252 KB (Peak: 26308 KB)
+Design Loading CPU Usage: 0 ms
+Simulation completed
+Simulation Memory Usage: 108440 KB (Peak: 165520 KB)
+Simulation CPU Usage: 10 ms

@@ -1,0 +1,29 @@
+#-----------------------------------------------------------
+# xsim v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Mon Jul 27 11:39:46 2020
+# Process ID: 5397
+# Current directory: /home/justin/jhai/paulchowresearch2020/xvc/test_hls_server/test_hls_server.prj/solution1/sim/verilog
+# Command line: xsim -mode tcl -source {xsim.dir/test_hls_server/xsim_script.tcl}
+# Log file: /home/justin/jhai/paulchowresearch2020/xvc/test_hls_server/test_hls_server.prj/solution1/sim/verilog/xsim.log
+# Journal file: /home/justin/jhai/paulchowresearch2020/xvc/test_hls_server/test_hls_server.prj/solution1/sim/verilog/xsim.jou
+#-----------------------------------------------------------
+source xsim.dir/test_hls_server/xsim_script.tcl
+# xsim {test_hls_server} -autoloadwcfg -tclbatch {test_hls_server.tcl}
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+source test_hls_server.tcl
+## run all
+////////////////////////////////////////////////////////////////////////////////////
+// Inter-Transaction Progress: Completed Transaction / Total Transaction
+// Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
+//
+// RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
+////////////////////////////////////////////////////////////////////////////////////
+// RTL Simulation : 0 / 1 [n/a] @ "125000"
+// RTL Simulation : 1 / 1 [n/a] @ "135000"
+////////////////////////////////////////////////////////////////////////////////////
+$finish called at time : 175 ns : File "/home/justin/jhai/paulchowresearch2020/xvc/test_hls_server/test_hls_server.prj/solution1/sim/verilog/test_hls_server.autotb.v" Line 248
+## quit
+INFO: [Common 17-206] Exiting xsim at Mon Jul 27 11:39:55 2020...

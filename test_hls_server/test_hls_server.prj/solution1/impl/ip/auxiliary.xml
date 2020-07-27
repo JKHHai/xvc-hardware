@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="test_hls_server" xd:componentRef="test_hls_server" xd:initiationInterval="1" xd:clockPeriod="10.000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+  <xd:arg xd:name="input.tdata" xd:originalName="input" xd:direction="in" xd:interfaceRef="input_V" xd:busTypeRef="axis" xd:dataPack="true" xd:bitMapping="511:0" xd:dataWidth="512"/>
+  <xd:arg xd:name="input.tkeep" xd:originalName="input" xd:direction="in" xd:interfaceRef="input_V" xd:busTypeRef="axis" xd:dataPack="true" xd:bitMapping="575:512" xd:dataWidth="64"/>
+  <xd:arg xd:name="input.tlast" xd:originalName="input" xd:direction="in" xd:interfaceRef="input_V" xd:busTypeRef="axis" xd:dataPack="true" xd:bitMapping="576:576" xd:dataWidth="1"/>
+  <xd:arg xd:name="output.tdata" xd:originalName="output" xd:direction="out" xd:interfaceRef="output_V" xd:busTypeRef="axis" xd:dataPack="true" xd:bitMapping="511:0" xd:dataWidth="512"/>
+  <xd:arg xd:name="output.tkeep" xd:originalName="output" xd:direction="out" xd:interfaceRef="output_V" xd:busTypeRef="axis" xd:dataPack="true" xd:bitMapping="575:512" xd:dataWidth="64"/>
+  <xd:arg xd:name="output.tlast" xd:originalName="output" xd:direction="out" xd:interfaceRef="output_V" xd:busTypeRef="axis" xd:dataPack="true" xd:bitMapping="576:576" xd:dataWidth="1"/>
+  <xd:latencyEstimates xd:best-case="0" xd:worst-case="0" xd:average-case="0"/>
+  <xd:resourceEstimates xd:LUT="95" xd:FF="2" xd:BRAM="0" xd:DSP="0"/>
+</xd:acceleratorMap>

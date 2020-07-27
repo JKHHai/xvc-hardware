@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="test_hls_server.cpp" path="/home/justin/jhai/paulchowresearch2020/xvc/test_hls_server/test_hls_server.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="tb_test_hls_server.cpp" path="/home/justin/jhai/paulchowresearch2020/xvc/test_hls_server/tb_test_hls_server.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

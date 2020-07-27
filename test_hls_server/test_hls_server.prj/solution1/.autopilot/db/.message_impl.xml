@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Messages>
+	<Message severity="INFO" prefix="[IMPL 213-8]" key="IMPL_8_1776" tag="" content="Exporting RTL as a Vivado IP."/>
+	<Message severity="INFO" prefix="[IMPL 213-200]" key="IMPL_200_1804" tag="" content="Port &apos;input_V.tdata&apos; is mapped to &apos;TDATA&apos; by default."/>
+	<Message severity="INFO" prefix="[IMPL 213-200]" key="IMPL_200_1804" tag="" content="Port &apos;input_V.tkeep&apos; is mapped to &apos;TKEEP&apos; by default."/>
+	<Message severity="INFO" prefix="[IMPL 213-200]" key="IMPL_200_1804" tag="" content="Port &apos;input_V.tlast&apos; is mapped to &apos;TLAST&apos; by default."/>
+	<Message severity="INFO" prefix="[IMPL 213-200]" key="IMPL_200_1804" tag="" content="Port &apos;output_V.tdata&apos; is mapped to &apos;TDATA&apos; by default."/>
+	<Message severity="INFO" prefix="[IMPL 213-200]" key="IMPL_200_1804" tag="" content="Port &apos;output_V.tkeep&apos; is mapped to &apos;TKEEP&apos; by default."/>
+	<Message severity="INFO" prefix="[IMPL 213-200]" key="IMPL_200_1804" tag="" content="Port &apos;output_V.tlast&apos; is mapped to &apos;TLAST&apos; by default."/>
+</Messages>

@@ -1,0 +1,6 @@
+<annotationInfo>
+<item  id="14" filename="./test_hls_server.h" linenumber="9" name="temp_data_out_tlast_s" contextFuncName="operator=" moduleName="Block__proc24" rtlName="temp_data_out_tlast_s_fu_79_p3" latency="0" BRAM="-1" DSP="-1" FF="-1" LUT="-1" fileDirectory="/home/justin/jhai/paulchowresearch2020/xvc/test_hls_server"&gt;&lt;\/item&gt;
+<item  id="17" filename="test_hls_server.cpp" linenumber="22" name="tmp_3" contextFuncName="test_hls_server" moduleName="Block__proc24" rtlName="tmp_3_fu_101_p3" latency="0" BRAM="-1" DSP="-1" FF="-1" LUT="-1" fileDirectory="/home/justin/jhai/paulchowresearch2020/xvc/test_hls_server"&gt;&lt;\/item&gt;
+<item  id="18" filename="test_hls_server.cpp" linenumber="22" name="temp_data_out_tkeep_s" contextFuncName="test_hls_server" moduleName="Block__proc24" rtlName="temp_data_out_tkeep_s_fu_109_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="64" fileDirectory="/home/justin/jhai/paulchowresearch2020/xvc/test_hls_server"&gt;&lt;\/item&gt;
+<item  id="19" filename="test_hls_server.cpp" linenumber="24" name="tmp_11" contextFuncName="test_hls_server" moduleName="Block__proc24" rtlName="output_V_din" latency="0" BRAM="-1" DSP="-1" FF="-1" LUT="-1" fileDirectory="/home/justin/jhai/paulchowresearch2020/xvc/test_hls_server"&gt;&lt;\/item&gt;
+</annotationInfo>

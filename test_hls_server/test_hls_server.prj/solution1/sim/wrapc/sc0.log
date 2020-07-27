@@ -1,0 +1,5 @@
+   Build using "/home/justin/jhai/Xilinx/Vivado/2018.3/tps/lnx64/gcc-6.2.0/bin/g++"
+   Compiling test_hls_server.cpp_pre.cpp.tb.cpp
+   Compiling apatb_test_hls_server.cpp
+   Compiling tb_test_hls_server.cpp_pre.cpp.tb.cpp
+   Generating cosim.tv.exe
