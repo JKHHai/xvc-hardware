@@ -11,13 +11,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="289908000fs"></ZoomStartTime>
-      <ZoomEndTime time="419908001fs"></ZoomEndTime>
-      <Cursor1Time time="358108000fs"></Cursor1Time>
+      <ZoomStartTime time="250000000fs"></ZoomStartTime>
+      <ZoomEndTime time="402839726fs"></ZoomEndTime>
+      <Cursor1Time time="326000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="175"></NameColumnWidth>
-      <ValueColumnWidth column_width="102"></ValueColumnWidth>
+      <ValueColumnWidth column_width="94"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="28" />
    <wvobject type="logic" fp_name="/tb_test_hardware_server/r_clock">
@@ -33,24 +33,20 @@
       <obj_property name="ObjectShortName">r_input_tvalid</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/tb_test_hardware_server/r_input_tdata">
-      <obj_property name="ElementShortName">r_input_tdata[31:0]</obj_property>
-      <obj_property name="ObjectShortName">r_input_tdata[31:0]</obj_property>
+      <obj_property name="ElementShortName">r_input_tdata[511:0]</obj_property>
+      <obj_property name="ObjectShortName">r_input_tdata[511:0]</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/tb_test_hardware_server/r_input_tkeep">
-      <obj_property name="ElementShortName">r_input_tkeep[3:0]</obj_property>
-      <obj_property name="ObjectShortName">r_input_tkeep[3:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/tb_test_hardware_server/r_input_tlast">
-      <obj_property name="ElementShortName">r_input_tlast</obj_property>
-      <obj_property name="ObjectShortName">r_input_tlast</obj_property>
+      <obj_property name="ElementShortName">r_input_tkeep[63:0]</obj_property>
+      <obj_property name="ObjectShortName">r_input_tkeep[63:0]</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/tb_test_hardware_server/w_output_tvalid">
       <obj_property name="ElementShortName">w_output_tvalid</obj_property>
       <obj_property name="ObjectShortName">w_output_tvalid</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/tb_test_hardware_server/r_output_tready">
-      <obj_property name="ElementShortName">r_output_tready</obj_property>
-      <obj_property name="ObjectShortName">r_output_tready</obj_property>
+   <wvobject type="logic" fp_name="/tb_test_hardware_server/w_output_tready">
+      <obj_property name="ElementShortName">w_output_tready</obj_property>
+      <obj_property name="ObjectShortName">w_output_tready</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/tb_test_hardware_server/r_output_tdata">
       <obj_property name="ElementShortName">r_output_tdata[511:0]</obj_property>
@@ -68,6 +64,10 @@
       <obj_property name="label">DUT</obj_property>
       <obj_property name="DisplayName">label</obj_property>
    </wvobject>
+   <wvobject type="array" fp_name="/tb_test_hardware_server/DUT/r_core_state">
+      <obj_property name="ElementShortName">r_core_state[2:0]</obj_property>
+      <obj_property name="ObjectShortName">r_core_state[2:0]</obj_property>
+   </wvobject>
    <wvobject type="logic" fp_name="/tb_test_hardware_server/DUT/i_input_TVALID">
       <obj_property name="ElementShortName">i_input_TVALID</obj_property>
       <obj_property name="ObjectShortName">i_input_TVALID</obj_property>
@@ -77,12 +77,12 @@
       <obj_property name="ObjectShortName">r_input_tready</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/tb_test_hardware_server/DUT/r_input_tdata">
-      <obj_property name="ElementShortName">r_input_tdata[31:0]</obj_property>
-      <obj_property name="ObjectShortName">r_input_tdata[31:0]</obj_property>
+      <obj_property name="ElementShortName">r_input_tdata[511:0]</obj_property>
+      <obj_property name="ObjectShortName">r_input_tdata[511:0]</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/tb_test_hardware_server/DUT/r_input_tkeep">
-      <obj_property name="ElementShortName">r_input_tkeep[3:0]</obj_property>
-      <obj_property name="ObjectShortName">r_input_tkeep[3:0]</obj_property>
+      <obj_property name="ElementShortName">r_input_tkeep[63:0]</obj_property>
+      <obj_property name="ObjectShortName">r_input_tkeep[63:0]</obj_property>
       <obj_property name="Radix">BINARYRADIX</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/tb_test_hardware_server/DUT/r_input_tlast">
@@ -106,22 +106,22 @@
       <obj_property name="ObjectShortName">r_output_tlast</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/tb_test_hardware_server/DUT/r_valid_input_tdata">
-      <obj_property name="ElementShortName">r_valid_input_tdata[31:0]</obj_property>
-      <obj_property name="ObjectShortName">r_valid_input_tdata[31:0]</obj_property>
+      <obj_property name="ElementShortName">r_valid_input_tdata[511:0]</obj_property>
+      <obj_property name="ObjectShortName">r_valid_input_tdata[511:0]</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/tb_test_hardware_server/DUT/r_valid_input_tkeep">
-      <obj_property name="ElementShortName">r_valid_input_tkeep[3:0]</obj_property>
-      <obj_property name="ObjectShortName">r_valid_input_tkeep[3:0]</obj_property>
+      <obj_property name="ElementShortName">r_valid_input_tkeep[63:0]</obj_property>
+      <obj_property name="ObjectShortName">r_valid_input_tkeep[63:0]</obj_property>
       <obj_property name="Radix">BINARYRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/tb_test_hardware_server/DUT/r_computed_tdata">
-      <obj_property name="ElementShortName">r_computed_tdata[31:0]</obj_property>
-      <obj_property name="ObjectShortName">r_computed_tdata[31:0]</obj_property>
+      <obj_property name="ElementShortName">r_computed_tdata[511:0]</obj_property>
+      <obj_property name="ObjectShortName">r_computed_tdata[511:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/tb_test_hardware_server/DUT/r_computed_tkeep">
-      <obj_property name="ElementShortName">r_computed_tkeep[3:0]</obj_property>
-      <obj_property name="ObjectShortName">r_computed_tkeep[3:0]</obj_property>
+      <obj_property name="ElementShortName">r_computed_tkeep[63:0]</obj_property>
+      <obj_property name="ObjectShortName">r_computed_tkeep[63:0]</obj_property>
       <obj_property name="Radix">BINARYRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/tb_test_hardware_server/DUT/o_output_TDATA">

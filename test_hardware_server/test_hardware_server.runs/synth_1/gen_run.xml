@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xczu19eg-ffvc1760-2-i" LaunchTime="1598288546">
+  <File Type="VDS-TIMING-PB" Name="test_hardware_server_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="test_hardware_server_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="test_hardware_server.dcp"/>
+  <File Type="PA-TCL" Name="test_hardware_server.tcl"/>
+  <File Type="REPORTS-TCL" Name="test_hardware_server_reports.tcl"/>
+  <File Type="RDS-RDS" Name="test_hardware_server.vds"/>
+  <File Type="RDS-PROPCONSTRS" Name="test_hardware_server_drc_synth.rpt"/>
+  <File Type="RDS-UTIL" Name="test_hardware_server_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="test_hardware_server_utilization_synth.pb"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/test_hardware_server.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/test_hardware_server_ip/component.xml">
+      <FileInfo SFType="IPXACT"/>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="test_hardware_server"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>

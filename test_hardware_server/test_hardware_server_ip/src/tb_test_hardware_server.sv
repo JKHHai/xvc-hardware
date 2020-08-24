@@ -22,7 +22,7 @@
 
 module tb_test_hardware_server();
     // Declarations
-    parameter input_data_width = 32;
+    parameter input_data_width = 512;
     parameter output_data_width = 512;
     reg r_clock, r_reset;
     wire w_clock, w_reset;
@@ -99,12 +99,17 @@ module tb_test_hardware_server();
         r_output_tkeep = 0;
         r_output_tlast = 0;
 
-        #60 r_input_tdata = 'h10011001;
-        r_input_tkeep = 'b1001;
+        #60 r_input_tdata = 'h020000000000000000000000000000000000863787d9000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
+        r_input_tkeep = 'h8000000000000000;
         r_input_tlast = 1;
-        r_input_tvalid = 1;  
+        r_input_tvalid = 1; 
         
-        #500 $finish;      
+        #60 r_input_tdata = 'h040000000000000000000000000000000000863787d9000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
+        r_input_tkeep = 'h8000000000000000;
+        r_input_tlast = 1;
+        r_input_tvalid = 1;   
+        
+        #3000 $finish;      
     end
 
     // Lower input valid signal when ready signal is detected

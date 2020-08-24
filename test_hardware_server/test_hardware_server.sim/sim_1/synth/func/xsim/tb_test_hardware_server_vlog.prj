@@ -1,0 +1,9 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"tb_test_hardware_server_func_synth.v" \
+
+sv xil_defaultlib  \
+"../../../../../test_hardware_server.srcs/sim_1/new/tb_test_hardware_server.sv" \
+
+# Do not sort compile order
+nosort

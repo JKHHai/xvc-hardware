@@ -43,11 +43,12 @@ module test_hardware_server
     );
 
     // Declarations
-    reg r_idle; //High when idle, low when not
-    reg r_input_conversion_in_progress; // High when data has been received and is ready for converting (removal of invalid bits, shifting to start at LSB)    
-    reg r_output_conversion_in_progress; // High when data has been computed and is ready for converting (shifting to start at MSB)    
-    reg r_computation_in_progress; // High when data has been converted and is ready for computing
-
+    localparam STATE_IDLE = 3'd0; // Core is waiting for inputs
+    localparam STATE_INPUT_DATA_CONVERSION = 3'd1; // Data has been received and is being converted (removal of invalid bits, shifting to start at LSB)    
+    localparam STATE_COMPUTATION = 3'd2; // Output data is being computed
+    localparam STATE_OUTPUT_DATA_CONVERSION = 3'd3; // Output data is being converted for transmission
+    localparam STATE_OUTPUT_DATA_TRANSMISSION = 3'd4; // Output data is being transmitted
+    reg [2:0] r_core_state;
     // Registers - Input Stream
     reg r_input_tready;
     reg [INPUT_DATA_WIDTH-1:0] r_input_tdata;
@@ -77,15 +78,12 @@ module test_hardware_server
     assign o_output_TKEEP = r_output_tkeep;
     assign o_output_TLAST = r_output_tlast;
 
-    // Setup and Resets
     always @(posedge i_clk)
     begin
+        // Setup and Resets
         if (i_aresetn == 1'b0)
         begin
-            r_idle <= 1'b1;
-            r_input_conversion_in_progress <= 1'b0;
-            r_output_conversion_in_progress <= 1'b0;
-            r_computation_in_progress <= 1'b0;
+            r_core_state <= STATE_IDLE;
             // Input Stream
             r_input_tready <= 1'b0;
             r_input_tdata <= 0;
@@ -107,117 +105,96 @@ module test_hardware_server
             r_output_tkeep <= 0;
             r_output_tlast <= 0;
         end
-    end
-
-    // Read incoming packets
-    always @(posedge i_clk)
-    begin
-        if (i_aresetn != 1'b0)
+        else
         begin
-            if (i_input_TVALID == 1'b1 && r_idle == 1'b1)
-            begin
-                r_input_tready <= 1'b1;
-                r_idle <= 1'b0;
-            end
-        end
-    end
-    always @(posedge i_clk)
-    begin
-        if (i_aresetn != 1'b0)
-        begin
-            if (i_input_TVALID == 1'b1 && r_input_tready == 1'b1)
-            begin
-                r_input_tready <= 1'b0;
-                r_input_conversion_in_progress <= 1'b1;
-                r_input_tdata <= i_input_TDATA;
-                r_input_tkeep <= i_input_TKEEP;
-                r_input_tlast <= i_input_TLAST;
-            end
-        end
-    end
-
-    // Convert the packet into a valid packet (only contains valid bits, shifted to start at entry 0)
-    always @(posedge i_clk)
-    begin
-        if (i_aresetn != 1'b0)
-        begin
-            if (r_input_conversion_in_progress == 1'b1)
-            begin
-                // Conversion will be finished once all keep bits have been     evaluated
-                if (r_input_tkeep_index == (INPUT_DATA_WIDTH/8))
+            case (r_core_state)
+                STATE_IDLE:
+                // Read incoming packets
                 begin
-                    r_input_conversion_in_progress <= 1'b0;
-                    r_computation_in_progress <= 1'b1;
-                    r_input_tdata_index <= 0;
-                    r_input_tkeep_index <= 0;
-                end
-                else
-                begin
-                    if (r_input_tkeep[r_input_tkeep_index] == 1)
+                    if (i_input_TVALID == 1'b1)
                     begin
-                        r_valid_input_tdata[r_input_tdata_index+:8] <= r_input_tdata    [(8*r_input_tkeep_index)+:8];
-                        r_valid_input_tkeep[(r_input_tdata_index/8)] <= 1;
-                        r_input_tdata_index <= (r_input_tdata_index + 8);
+                        if (r_input_tready == 1'b1)
+                        begin
+                            r_input_tready <= 1'b0;
+                            r_input_tdata <= i_input_TDATA;
+                            r_input_tkeep <= i_input_TKEEP;
+                            r_input_tlast <= i_input_TLAST;
+                            r_core_state <= STATE_INPUT_DATA_CONVERSION;
+                        end
+                        else
+                        begin
+                            r_input_tready <= 1'b1;
+                        end
                     end
-                    r_input_tkeep_index <= (r_input_tkeep_index + 1); 
                 end
-            end
-        end
-    end
-
-    // Compute the output data
-    always @(posedge i_clk)
-    begin
-        if (i_aresetn != 1'b0)
-        begin
-            if (r_computation_in_progress == 1'b1)
-            begin
-                r_computation_in_progress <= 1'b0;
-                r_output_conversion_in_progress <= 1'b1;
-                r_computed_tdata <= (r_valid_input_tdata << 1);
-                r_computed_tkeep <= (r_valid_input_tkeep << 1) + 1;
-            end
-        end
-    end
-
-    // Convert output data back into UDP form
-    always @(posedge i_clk)
-    begin
-        if (i_aresetn != 1'b0)
-        begin
-            if (r_output_conversion_in_progress == 1'b1)
-            begin
-                if (r_output_tkeep_index == -1)
+                STATE_INPUT_DATA_CONVERSION:
+                // Convert the packet into a valid packet (only contains valid bits, shifted to start at entry 0)
                 begin
-                    r_output_conversion_in_progress <= 1'b0;
-                    r_output_tdata_index <= (OUTPUT_DATA_WIDTH-1);
-                    r_output_tkeep_index <= (OUTPUT_DATA_WIDTH-1)/8;
+                    // Conversion will be finished once all keep bits have been evaluated
+                    if (r_input_tkeep_index == (INPUT_DATA_WIDTH/8))
+                    begin
+                        r_input_tdata_index <= 0;
+                        r_input_tkeep_index <= 0;
+                        r_core_state <= STATE_COMPUTATION;
+                    end
+                    else
+                    begin
+                        if (r_input_tkeep[r_input_tkeep_index] == 1)
+                        begin
+                            r_valid_input_tdata[r_input_tdata_index+:8] <= r_input_tdata[(8*r_input_tkeep_index)+:8];
+                            r_valid_input_tkeep[(r_input_tdata_index/8)] <= 1;
+                            r_input_tdata_index <= (r_input_tdata_index + 8);
+                        end
+                        r_input_tkeep_index <= (r_input_tkeep_index + 1); 
+                    end
+                end
+                STATE_COMPUTATION:
+                // Compute the output data and clear the previous data
+                begin
+                    r_computed_tdata <= (r_valid_input_tdata << 1);
+                    r_computed_tkeep <= (r_valid_input_tkeep << 1) + 1;
                     r_output_tlast <= r_input_tlast;
-                    r_output_tvalid <= 1;
+                    r_valid_input_tdata <= 0;
+                    r_valid_input_tkeep <= 0;
+                    r_core_state <= STATE_OUTPUT_DATA_CONVERSION;
                 end
-                else
+                STATE_OUTPUT_DATA_CONVERSION:
+                // Convert output data back into UDP form
                 begin
-                    if (r_computed_tkeep[r_output_tkeep_index] == 1'b1)
+                    if (r_output_tkeep_index == -1)
                     begin
-                        r_output_tdata[r_output_tdata_index-:8] <= r_computed_tdata[    (r_output_tkeep_index*8)+:8];
-                        r_output_tkeep[(r_output_tdata_index/8)] <= 1;
-                        r_output_tdata_index <= (r_output_tdata_index - 8);
+                        r_output_tdata_index <= (OUTPUT_DATA_WIDTH-1);
+                        r_output_tkeep_index <= (OUTPUT_DATA_WIDTH-1)/8;
+                        r_core_state <= STATE_OUTPUT_DATA_TRANSMISSION;
                     end
-                    r_output_tkeep_index <= (r_output_tkeep_index - 1);
+                    else
+                    begin
+                        if (r_computed_tkeep[r_output_tkeep_index] == 1'b1)
+                        begin
+                            r_output_tdata[r_output_tdata_index-:8] <= r_computed_tdata[(r_output_tkeep_index*8)+:8];
+                            r_output_tkeep[(r_output_tdata_index/8)] <= 1;
+                            r_output_tdata_index <= (r_output_tdata_index - 8);
+                        end
+                        r_output_tkeep_index <= (r_output_tkeep_index - 1);
+                    end
                 end
-            end
-        end
-    end
-
-    always @(posedge i_clk)
-    begin
-        if (i_aresetn != 1'b0)
-        begin
-            if (r_output_tvalid == 1'b1 && i_output_TREADY == 1'b1)
-            begin
-                r_output_tvalid <= 1'b0;
-                r_idle <= 1'b1;
-            end
+                STATE_OUTPUT_DATA_TRANSMISSION:
+                // Transmit output data
+                begin
+                    if (r_output_tvalid == 1'b0)
+                    begin
+                        r_output_tvalid <= 1'b1;
+                    end
+                    else if (r_output_tvalid == 1'b1 && i_output_TREADY == 1'b1)
+                    begin
+                        r_output_tvalid <= 1'b0;
+                        r_output_tdata <= 0;
+                        r_output_tkeep <= 0;
+                        r_output_tlast <= 0;
+                        r_core_state <= STATE_IDLE;
+                    end
+                end
+            endcase
         end
     end
 endmodule
