@@ -17,6 +17,10 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param xicom.use_bs_reader 1
+set_param tcl.collectionResultDisplayLimit 0
+set_param chipscope.maxJobs 6
+set_msg_config -id {HDL-1065} -limit 10000
 create_project -in_memory -part xczu19eg-ffvc1760-2-i
 
 set_param project.singleFileAddWarning.threshold 0

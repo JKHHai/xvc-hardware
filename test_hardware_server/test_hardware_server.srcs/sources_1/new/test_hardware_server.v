@@ -34,12 +34,20 @@ module test_hardware_server
         input [INPUT_DATA_WIDTH-1:0] i_input_TDATA,
         input [(INPUT_DATA_WIDTH-1)/8:0] i_input_TKEEP,
         input i_input_TLAST,
+        // Input network information
+        input [31:0] i_remote_ip_rx,
+        input [15:0] i_remote_port_rx,
+        input [15:0] i_local_port_rx,
         // Output Stream
         output o_output_TVALID,
         input i_output_TREADY,
         output [OUTPUT_DATA_WIDTH-1:0] o_output_TDATA,
         output [(OUTPUT_DATA_WIDTH-1)/8:0] o_output_TKEEP,
-        output o_output_TLAST
+        output o_output_TLAST,
+        // Output network information
+        output [31:0] o_remote_ip_tx,
+        output [15:0] o_remote_port_tx,
+        output [15:0] o_local_port_tx
     );
 
     // Declarations
@@ -54,6 +62,10 @@ module test_hardware_server
     reg [INPUT_DATA_WIDTH-1:0] r_input_tdata;
     reg [(INPUT_DATA_WIDTH-1)/8:0] r_input_tkeep;
     reg r_input_tlast;
+    // Input Stream Network Information
+    reg [31:0] r_remote_ip_rx;
+    reg [15:0] r_remote_port_rx;
+    reg [15:0] r_local_port_rx;
     // Registers - Input Data Conversion
     reg [INPUT_DATA_WIDTH-1:0] r_valid_input_tdata;
     reg [(INPUT_DATA_WIDTH-1)/8:0] r_valid_input_tkeep;
@@ -65,6 +77,10 @@ module test_hardware_server
     reg [OUTPUT_DATA_WIDTH-1:0] r_output_tdata;
     reg [(OUTPUT_DATA_WIDTH-1)/8:0] r_output_tkeep;
     reg r_output_tlast;
+    // Output Stream Network Information
+    reg [31:0] r_remote_ip_tx;
+    reg [15:0] r_remote_port_tx;
+    reg [15:0] r_local_port_tx;
     // Wires - Output Data Conversion and Stream
     wire [OUTPUT_DATA_WIDTH-1:0] w_computed_tdata_byte_shifted;
     wire [(OUTPUT_DATA_WIDTH-1)/8:0] w_computed_tkeep_bit_shifted;
@@ -77,6 +93,9 @@ module test_hardware_server
     assign o_output_TDATA = r_output_tdata;
     assign o_output_TKEEP = r_output_tkeep;
     assign o_output_TLAST = r_output_tlast;
+    assign o_remote_ip_tx = r_remote_ip_tx;
+    assign o_remote_port_tx = r_remote_port_tx;
+    assign o_local_port_tx = r_local_port_tx;
 
     always @(posedge i_clk)
     begin
@@ -89,6 +108,9 @@ module test_hardware_server
             r_input_tdata <= 0;
             r_input_tkeep <= 0;
             r_input_tlast <= 0;
+            r_remote_ip_rx <= 0;
+            r_remote_port_rx <= 0;
+            r_local_port_rx <= 0;
             // Input Data Conversion
             r_valid_input_tdata <= 0;
             r_valid_input_tkeep <= 0;
@@ -100,12 +122,15 @@ module test_hardware_server
             r_output_tdata <= 0;
             r_output_tkeep <= 0;
             r_output_tlast <= 0;
+            r_remote_ip_tx <= 0;
+            r_remote_port_tx <= 0;
+            r_local_port_tx <= 0;
         end
         else
         begin
             case (r_core_state)
                 STATE_IDLE:
-                // Read incoming packets
+                // Read incoming packets and network information
                 begin
                     if (i_input_TVALID == 1'b1)
                     begin
@@ -115,6 +140,9 @@ module test_hardware_server
                             r_input_tdata <= i_input_TDATA;
                             r_input_tkeep <= i_input_TKEEP;
                             r_input_tlast <= i_input_TLAST;
+                            r_remote_ip_rx <= i_remote_ip_rx;
+                            r_remote_port_rx <= i_remote_port_rx;
+                            r_local_port_rx <= i_local_port_rx;
                             r_core_state <= STATE_INPUT_DATA_CONVERSION;
                         end
                         else
@@ -172,10 +200,13 @@ module test_hardware_server
                     end
                 end
                 STATE_OUTPUT_DATA_TRANSMISSION:
-                // Transmit output data
+                // Transmit output data and network information
                 begin
                     if (r_output_tvalid == 1'b0)
                     begin
+                        r_remote_ip_tx <= r_remote_ip_rx;
+                        r_remote_port_tx <= r_remote_port_rx;
+                        r_local_port_tx <= r_local_port_rx;
                         r_output_tvalid <= 1'b1;
                     end
                     else if (r_output_tvalid == 1'b1 && i_output_TREADY == 1'b1)

@@ -53,18 +53,18 @@ extern void execute_10(char*, char *);
 extern void vlog_simple_process_execute_0_fast_no_reg_no_agg(char*, char*, char*);
 extern void vlog_simple_process_execute_1_fast_no_reg_no_agg(char*, char*, char*);
 extern void execute_3(char*, char *);
-extern void execute_22(char*, char *);
-extern void execute_23(char*, char *);
+extern void execute_25(char*, char *);
+extern void execute_26(char*, char *);
 extern void execute_12(char*, char *);
 extern void execute_13(char*, char *);
 extern void execute_14(char*, char *);
-extern void execute_29(char*, char *);
-extern void execute_30(char*, char *);
-extern void execute_31(char*, char *);
-extern void execute_32(char*, char *);
-extern void execute_33(char*, char *);
+extern void execute_35(char*, char *);
+extern void execute_36(char*, char *);
+extern void execute_37(char*, char *);
+extern void execute_38(char*, char *);
+extern void execute_39(char*, char *);
 extern void vlog_transfunc_eventcallback(char*, char*, unsigned, unsigned, unsigned, char *);
-funcp funcTab[21] = {(funcp)execute_4, (funcp)execute_5, (funcp)execute_6, (funcp)execute_7, (funcp)execute_8, (funcp)execute_9, (funcp)execute_10, (funcp)vlog_simple_process_execute_0_fast_no_reg_no_agg, (funcp)vlog_simple_process_execute_1_fast_no_reg_no_agg, (funcp)execute_3, (funcp)execute_22, (funcp)execute_23, (funcp)execute_12, (funcp)execute_13, (funcp)execute_14, (funcp)execute_29, (funcp)execute_30, (funcp)execute_31, (funcp)execute_32, (funcp)execute_33, (funcp)vlog_transfunc_eventcallback};
+funcp funcTab[21] = {(funcp)execute_4, (funcp)execute_5, (funcp)execute_6, (funcp)execute_7, (funcp)execute_8, (funcp)execute_9, (funcp)execute_10, (funcp)vlog_simple_process_execute_0_fast_no_reg_no_agg, (funcp)vlog_simple_process_execute_1_fast_no_reg_no_agg, (funcp)execute_3, (funcp)execute_25, (funcp)execute_26, (funcp)execute_12, (funcp)execute_13, (funcp)execute_14, (funcp)execute_35, (funcp)execute_36, (funcp)execute_37, (funcp)execute_38, (funcp)execute_39, (funcp)vlog_transfunc_eventcallback};
 const int NumRelocateId= 21;
 
 void relocate(char *dp)

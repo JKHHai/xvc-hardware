@@ -2,6 +2,7 @@
 # MUST BE RUN USING PYTHON 3
 
 import socket
+import time
 
 if (__name__ == "__main__"):
     my_ip_address = "10.1.2.12"
@@ -12,13 +13,17 @@ if (__name__ == "__main__"):
     i = 1
     server_ip_address = "10.100.100.100"
     while True:
-        message = bytes([2])
+        message = bytes([i])
+        start_time = time.time()
         sock.sendto(message, (server_ip_address, udp_port))
         print("Sent message:", message)
         data, addr = sock.recvfrom(1024)
+        end_time = time.time()
         print(data)
         if (data == 2 * i):
             print("TEST PASSED")
         else:
             print("TEST FAILED")
+        elapsed_time = end_time - start_time
+        print("Processing time:", elapsed_time)
         i += 1
