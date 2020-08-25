@@ -2,8 +2,8 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Mon Aug 24 17:02:29 2020
-# Process ID: 31659
+# Start of session at: Tue Aug 25 16:22:43 2020
+# Process ID: 18294
 # Current directory: /home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server.runs/synth_1
 # Command line: vivado -log test_hardware_server.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source test_hardware_server.tcl
 # Log file: /home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server.runs/synth_1/test_hardware_server.vds

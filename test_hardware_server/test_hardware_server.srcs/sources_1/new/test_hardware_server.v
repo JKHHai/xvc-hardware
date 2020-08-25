@@ -57,8 +57,6 @@ module test_hardware_server
     // Registers - Input Data Conversion
     reg [INPUT_DATA_WIDTH-1:0] r_valid_input_tdata;
     reg [(INPUT_DATA_WIDTH-1)/8:0] r_valid_input_tkeep;
-    reg [(INPUT_DATA_WIDTH-1)/8:0] r_input_tdata_index;
-    reg [(INPUT_DATA_WIDTH-1)/8:0] r_input_tkeep_index;
     // Registers - Data Computation
     reg [INPUT_DATA_WIDTH-1:0] r_computed_tdata;
     reg [(INPUT_DATA_WIDTH-1)/8:0] r_computed_tkeep;
@@ -67,11 +65,13 @@ module test_hardware_server
     reg [OUTPUT_DATA_WIDTH-1:0] r_output_tdata;
     reg [(OUTPUT_DATA_WIDTH-1)/8:0] r_output_tkeep;
     reg r_output_tlast;
-    reg [(OUTPUT_DATA_WIDTH-1)/8:0] r_output_tdata_index;
-    reg [(OUTPUT_DATA_WIDTH-1)/8:0] r_output_tkeep_index;
-
+    // Wires - Output Data Conversion and Stream
+    wire [OUTPUT_DATA_WIDTH-1:0] w_computed_tdata_byte_shifted;
+    wire [(OUTPUT_DATA_WIDTH-1)/8:0] w_computed_tkeep_bit_shifted;
 
     // Assignments
+    assign w_computed_tdata_byte_shifted = r_computed_tdata[7:0] << (OUTPUT_DATA_WIDTH - 8);
+    assign w_computed_tkeep_bit_shifted = 1'b1 << ((OUTPUT_DATA_WIDTH - 1) / 8);
     assign o_input_TREADY = r_input_tready;
     assign o_output_TVALID = r_output_tvalid;
     assign o_output_TDATA = r_output_tdata;
@@ -92,14 +92,10 @@ module test_hardware_server
             // Input Data Conversion
             r_valid_input_tdata <= 0;
             r_valid_input_tkeep <= 0;
-            r_input_tdata_index <= 0;
-            r_input_tkeep_index <= 0;
             // Data Computation
             r_computed_tdata <= 0;
             r_computed_tkeep <= 0;
             // Output Data Conversion and Stream
-            r_output_tdata_index <= (OUTPUT_DATA_WIDTH-1);
-            r_output_tkeep_index <= (OUTPUT_DATA_WIDTH-1)/8;
             r_output_tvalid <= 1'b0;
             r_output_tdata <= 0;
             r_output_tkeep <= 0;
@@ -130,22 +126,20 @@ module test_hardware_server
                 STATE_INPUT_DATA_CONVERSION:
                 // Convert the packet into a valid packet (only contains valid bits, shifted to start at entry 0)
                 begin
-                    // Conversion will be finished once all keep bits have been evaluated
-                    if (r_input_tkeep_index == (INPUT_DATA_WIDTH/8))
+                    // Conversion will be finished once there are no valid keep bits left
+                    if (r_input_tkeep == 0)
                     begin
-                        r_input_tdata_index <= 0;
-                        r_input_tkeep_index <= 0;
                         r_core_state <= STATE_COMPUTATION;
                     end
                     else
                     begin
-                        if (r_input_tkeep[r_input_tkeep_index] == 1)
+                        if (r_input_tkeep[(INPUT_DATA_WIDTH-1)/8] == 1)
                         begin
-                            r_valid_input_tdata[r_input_tdata_index+:8] <= r_input_tdata[(8*r_input_tkeep_index)+:8];
-                            r_valid_input_tkeep[(r_input_tdata_index/8)] <= 1;
-                            r_input_tdata_index <= (r_input_tdata_index + 8);
+                            r_valid_input_tdata <= (r_valid_input_tdata << 8) | r_input_tdata[INPUT_DATA_WIDTH-1:INPUT_DATA_WIDTH-8];
+                            r_valid_input_tkeep <= (r_valid_input_tkeep << 1) | 1;
                         end
-                        r_input_tkeep_index <= (r_input_tkeep_index + 1); 
+                        r_input_tdata <= (r_input_tdata << 8); 
+                        r_input_tkeep <= (r_input_tkeep << 1);
                     end
                 end
                 STATE_COMPUTATION:
@@ -161,21 +155,20 @@ module test_hardware_server
                 STATE_OUTPUT_DATA_CONVERSION:
                 // Convert output data back into UDP form
                 begin
-                    if (r_output_tkeep_index == -1)
+                    if (r_computed_tkeep == 0)
                     begin
-                        r_output_tdata_index <= (OUTPUT_DATA_WIDTH-1);
-                        r_output_tkeep_index <= (OUTPUT_DATA_WIDTH-1)/8;
+                        r_computed_tdata <= 0;
                         r_core_state <= STATE_OUTPUT_DATA_TRANSMISSION;
                     end
                     else
                     begin
-                        if (r_computed_tkeep[r_output_tkeep_index] == 1'b1)
+                        if (r_computed_tkeep[0] == 1'b1)
                         begin
-                            r_output_tdata[r_output_tdata_index-:8] <= r_computed_tdata[(r_output_tkeep_index*8)+:8];
-                            r_output_tkeep[(r_output_tdata_index/8)] <= 1;
-                            r_output_tdata_index <= (r_output_tdata_index - 8);
+                            r_output_tdata <= (r_output_tdata >> 8) | w_computed_tdata_byte_shifted;
+                            r_output_tkeep <= (r_output_tkeep >> 1) | w_computed_tkeep_bit_shifted;
                         end
-                        r_output_tkeep_index <= (r_output_tkeep_index - 1);
+                        r_computed_tdata <= (r_computed_tdata >> 8);
+                        r_computed_tkeep <= (r_computed_tkeep >> 1);
                     end
                 end
                 STATE_OUTPUT_DATA_TRANSMISSION:
