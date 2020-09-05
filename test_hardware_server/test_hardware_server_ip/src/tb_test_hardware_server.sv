@@ -134,10 +134,10 @@ module tb_test_hardware_server();
         r_local_port_rx = 16'd500;
         r_input_tvalid = 1; 
         
-        #60 r_input_tdata = 'h040000000000000000000000000000000000863787d9000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
-        r_input_tkeep = 'h8000000000000000;
-        r_input_tlast = 1;
-        r_input_tvalid = 1;   
+        // #60 r_input_tdata = 'h040000000000000000000000000000000000863787d9000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
+        // r_input_tkeep = 'h8000000000000000;
+        // r_input_tlast = 1;
+        // r_input_tvalid = 1;   
         
         #3000 $finish;      
     end
@@ -182,6 +182,13 @@ module tb_test_hardware_server();
             begin
                 $display("TEST FAILED");
             end
+            r_input_tdata <= 'h040000000000000000000000000000000000863787d9000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
+            r_input_tkeep <= 'h8000000000000000;
+            r_input_tlast <= 1;
+            r_remote_ip_rx <= 32'd10000;
+            r_remote_port_rx <= 16'd750;
+            r_local_port_rx <= 16'd200;
+            r_input_tvalid <= 1; 
         end
     end
 endmodule

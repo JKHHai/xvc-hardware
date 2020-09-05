@@ -3,8 +3,72 @@
   <spirit:vendor>uoft-hprc</spirit:vendor>
   <spirit:library>ths</spirit:library>
   <spirit:name>test_hardware_server</spirit:name>
-  <spirit:version>1.5</spirit:version>
+  <spirit:version>1.7</spirit:version>
   <spirit:busInterfaces>
+    <spirit:busInterface>
+      <spirit:name>ths_from_meta_rx</spirit:name>
+      <spirit:busType spirit:vendor="uoft-hprc" spirit:library="ths" spirit:name="from_meta_rx" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="uoft-hprc" spirit:library="ths" spirit:name="from_meta_rx_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>i_remote_ip_rx</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>i_remote_ip_rx</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>i_remote_port_rx</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>i_remote_port_rx</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>i_local_port_rx</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>i_local_port_rx</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>ths_to_meta_tx</spirit:name>
+      <spirit:busType spirit:vendor="uoft-hprc" spirit:library="ths" spirit:name="to_meta_tx" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="uoft-hprc" spirit:library="ths" spirit:name="to_meta_tx_rtl" spirit:version="1.0"/>
+      <spirit:master/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>o_remote_ip_tx</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>o_remote_ip_tx</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>o_remote_port_tx</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>o_remote_port_tx</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>o_local_port_tx</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>o_local_port_tx</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+    </spirit:busInterface>
     <spirit:busInterface>
       <spirit:name>i_input</spirit:name>
       <spirit:busType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="axis" spirit:version="1.0"/>
@@ -149,70 +213,6 @@
         </spirit:parameter>
       </spirit:parameters>
     </spirit:busInterface>
-    <spirit:busInterface>
-      <spirit:name>from_meta_rx</spirit:name>
-      <spirit:busType spirit:vendor="uoft-hprc" spirit:library="ths" spirit:name="from_meta_rx" spirit:version="1.0"/>
-      <spirit:abstractionType spirit:vendor="uoft-hprc" spirit:library="ths" spirit:name="from_meta_rx_rtl" spirit:version="1.0"/>
-      <spirit:slave/>
-      <spirit:portMaps>
-        <spirit:portMap>
-          <spirit:logicalPort>
-            <spirit:name>i_remote_ip_rx</spirit:name>
-          </spirit:logicalPort>
-          <spirit:physicalPort>
-            <spirit:name>i_remote_ip_rx</spirit:name>
-          </spirit:physicalPort>
-        </spirit:portMap>
-        <spirit:portMap>
-          <spirit:logicalPort>
-            <spirit:name>i_remote_port_rx</spirit:name>
-          </spirit:logicalPort>
-          <spirit:physicalPort>
-            <spirit:name>i_remote_port_rx</spirit:name>
-          </spirit:physicalPort>
-        </spirit:portMap>
-        <spirit:portMap>
-          <spirit:logicalPort>
-            <spirit:name>i_local_port_rx</spirit:name>
-          </spirit:logicalPort>
-          <spirit:physicalPort>
-            <spirit:name>i_local_port_rx</spirit:name>
-          </spirit:physicalPort>
-        </spirit:portMap>
-      </spirit:portMaps>
-    </spirit:busInterface>
-    <spirit:busInterface>
-      <spirit:name>to_meta_tx</spirit:name>
-      <spirit:busType spirit:vendor="uoft-hprc" spirit:library="ths" spirit:name="to_meta_tx" spirit:version="1.0"/>
-      <spirit:abstractionType spirit:vendor="uoft-hprc" spirit:library="ths" spirit:name="to_meta_tx_rtl" spirit:version="1.0"/>
-      <spirit:master/>
-      <spirit:portMaps>
-        <spirit:portMap>
-          <spirit:logicalPort>
-            <spirit:name>o_remote_ip_tx</spirit:name>
-          </spirit:logicalPort>
-          <spirit:physicalPort>
-            <spirit:name>o_remote_ip_tx</spirit:name>
-          </spirit:physicalPort>
-        </spirit:portMap>
-        <spirit:portMap>
-          <spirit:logicalPort>
-            <spirit:name>o_remote_port_tx</spirit:name>
-          </spirit:logicalPort>
-          <spirit:physicalPort>
-            <spirit:name>o_remote_port_tx</spirit:name>
-          </spirit:physicalPort>
-        </spirit:portMap>
-        <spirit:portMap>
-          <spirit:logicalPort>
-            <spirit:name>o_local_port_tx</spirit:name>
-          </spirit:logicalPort>
-          <spirit:physicalPort>
-            <spirit:name>o_local_port_tx</spirit:name>
-          </spirit:physicalPort>
-        </spirit:portMap>
-      </spirit:portMaps>
-    </spirit:busInterface>
   </spirit:busInterfaces>
   <spirit:model>
     <spirit:views>
@@ -228,7 +228,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>29282664</spirit:value>
+            <spirit:value>76b78d04</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -244,7 +244,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>29282664</spirit:value>
+            <spirit:value>76b78d04</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -259,7 +259,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>606c4c1d</spirit:value>
+            <spirit:value>65f4f196</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -587,14 +587,24 @@
     <spirit:fileSet>
       <spirit:name>xilinx_anylanguagesynthesis_view_fileset</spirit:name>
       <spirit:file>
+        <spirit:name>src/zero_latency_axis_fifo.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
         <spirit:name>src/test_hardware_server.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_29282664</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_faa90dc2</spirit:userFileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
       <spirit:name>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>src/zero_latency_axis_fifo.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
       <spirit:file>
         <spirit:name>src/test_hardware_server.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
@@ -621,14 +631,14 @@
     <spirit:fileSet>
       <spirit:name>xilinx_xpgui_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>xgui/test_hardware_server_v1_5.tcl</spirit:name>
+        <spirit:name>xgui/test_hardware_server_v1_7.tcl</spirit:name>
         <spirit:fileType>tclSource</spirit:fileType>
         <spirit:userFileType>CHECKSUM_f290841e</spirit:userFileType>
         <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
   </spirit:fileSets>
-  <spirit:description>test_hardware_server_v1_5</spirit:description>
+  <spirit:description>test_hardware_server_v1_7</spirit:description>
   <spirit:parameters>
     <spirit:parameter>
       <spirit:name>INPUT_DATA_WIDTH</spirit:name>
@@ -675,60 +685,40 @@
       <xilinx:taxonomies>
         <xilinx:taxonomy>/UserIP</xilinx:taxonomy>
       </xilinx:taxonomies>
-      <xilinx:displayName>test_hardware_server_v1_5</xilinx:displayName>
+      <xilinx:displayName>test_hardware_server_v1_7</xilinx:displayName>
       <xilinx:definitionSource>package_project</xilinx:definitionSource>
       <xilinx:coreRevision>1</xilinx:coreRevision>
       <xilinx:upgrades>
         <xilinx:canUpgradeFrom>user.org:user:test_hardware_server:1.0</xilinx:canUpgradeFrom>
       </xilinx:upgrades>
-      <xilinx:coreCreationDateTime>2020-08-25T21:20:00Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2020-08-26T19:20:35Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@506ab305_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@5f806869_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@390fcd3f_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ce9ac52_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@50cb28fb_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@6c37bd32_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@1661ddc_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@7fbae98c_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@3f8cd198_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@81e55b5_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@2c272c60_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@6acd5a7c_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@998bd38_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@60eac65b_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@66a1b795_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@487808e1_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@57a253c9_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@7cd1973d_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@8ad09c6_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@f7ab16_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@75a72347_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@a270052_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@76ad9fa2_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@ade62ff_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d49c6d5_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@793f0d3_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@22a21f36_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@7294477d_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@673d94e6_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@5ecf2c11_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@73d296e0_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@62477b66_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@183579f4_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@51586a85_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@39051f6_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@4568c973_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@63de03d_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@4aeda811_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@34f4477b_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@3b5fc600_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@b2b9d67_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1eb1a931_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c1508cf_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7d05cd0d_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e7b4631_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5764f769_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@39ca43d1_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@368506d2_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@441bf1ab_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2096cad3_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@619bb043_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7dbff456_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e8d0f77_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@67394801_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@30fa419f_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5001d4e9_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5bfa8fe7_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a248729_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@62b8e9c7_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1d0014d3_ARCHIVE_LOCATION">/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server_ip</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2019.1</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="9f673b3d"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="51402935"/>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="ab0ca280"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="17815ff9"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="bfdb9ffb"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="8f4e43ce"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="42dbc8d9"/>

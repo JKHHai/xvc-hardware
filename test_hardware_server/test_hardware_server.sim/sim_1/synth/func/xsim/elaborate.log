@@ -7,18 +7,23 @@ Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
-Compiling module unisims_ver.x_lut2_mux4
-Compiling module unisims_ver.LUT2
-Compiling module unisims_ver.x_lut3_mux8
-Compiling module unisims_ver.LUT3
-Compiling module unisims_ver.x_lut1_mux2
-Compiling module unisims_ver.LUT1
 Compiling module unisims_ver.LUT5
 Compiling module unisims_ver.LUT4
 Compiling module unisims_ver.LUT6
+Compiling module unisims_ver.FDSE_default
 Compiling module unisims_ver.FDRE_default
 Compiling module unisims_ver.IBUF
 Compiling module unisims_ver.BUFGCE(CE_TYPE="ASYNC",SIM_DEVIC...
+Compiling module unisims_ver.RAMB36E2(CLOCK_DOMAINS="COMMON",...
+Compiling module unisims_ver.RAMB18E2(CLOCK_DOMAINS="COMMON",...
+Compiling module unisims_ver.RAM32M16
+Compiling module unisims_ver.x_lut3_mux8
+Compiling module unisims_ver.LUT3
+Compiling module unisims_ver.x_lut2_mux4
+Compiling module unisims_ver.LUT2
+Compiling module unisims_ver.x_lut1_mux2
+Compiling module unisims_ver.LUT1
+Compiling module xil_defaultlib.zero_latency_axis_fifo
 Compiling module unisims_ver.OBUF
 Compiling module xil_defaultlib.test_hardware_server
 Compiling module xil_defaultlib.tb_test_hardware_server

@@ -17,10 +17,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param xicom.use_bs_reader 1
-set_param tcl.collectionResultDisplayLimit 0
-set_param chipscope.maxJobs 6
-set_msg_config -id {HDL-1065} -limit 10000
 create_project -in_memory -part xczu19eg-ffvc1760-2-i
 
 set_param project.singleFileAddWarning.threshold 0
@@ -34,7 +30,10 @@ set_property ip_repo_paths /home/justin/paulchowresearch2020/xvc/xvc-hardware/te
 update_ip_catalog
 set_property ip_output_repo /home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-read_verilog -library xil_defaultlib /home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server.srcs/sources_1/new/test_hardware_server.v
+read_verilog -library xil_defaultlib {
+  /home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server.srcs/sources_1/imports/test_hardware_server/zero_latency_axis_fifo.v
+  /home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server.srcs/sources_1/new/test_hardware_server.v
+}
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
 # design are intentionally left as such for best results. Dcp files will be

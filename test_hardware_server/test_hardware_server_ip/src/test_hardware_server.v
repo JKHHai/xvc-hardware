@@ -51,12 +51,14 @@ module test_hardware_server
     );
 
     // Declarations
+    localparam METADATA_WIDTH = INPUT_DATA_WIDTH + 32 + 16 + 16; // Width of input data and remote IP, remote Port, and Local port, respectively
     localparam STATE_IDLE = 3'd0; // Core is waiting for inputs
     localparam STATE_INPUT_DATA_CONVERSION = 3'd1; // Data has been received and is being converted (removal of invalid bits, shifting to start at LSB)    
     localparam STATE_COMPUTATION = 3'd2; // Output data is being computed
     localparam STATE_OUTPUT_DATA_CONVERSION = 3'd3; // Output data is being converted for transmission
     localparam STATE_OUTPUT_DATA_TRANSMISSION = 3'd4; // Output data is being transmitted
     reg [2:0] r_core_state;
+    wire w_aresetp; // Goes high when aresetn goes low
     // Registers - Input Stream
     reg r_input_tready;
     reg [INPUT_DATA_WIDTH-1:0] r_input_tdata;
@@ -66,6 +68,14 @@ module test_hardware_server
     reg [31:0] r_remote_ip_rx;
     reg [15:0] r_remote_port_rx;
     reg [15:0] r_local_port_rx;
+    // Wires - Input Stream
+    wire [METADATA_WIDTH-1:0] w_input_metadata_tdata; // Concatenated input data in form {i_local_port_rx, i_remote_port_rx, i_remote_ip_rx, i_input_tdata}
+    wire [(METADATA_WIDTH-1/8):0] w_input_metadata_tkeep; // Concatenated input keep bits in form {2{1'b1}, 2{1'b1}, 4{1'b1}, i_input_tkeep}
+    wire w_fifo_tvalid;
+    wire w_fifo_tready;
+    wire [METADATA_WIDTH-1:0] w_fifo_metadata_tdata;
+    wire [(METADATA_WIDTH-1)/8:0] w_fifo_metadata_tkeep;
+    wire w_fifo_tlast;
     // Registers - Input Data Conversion
     reg [INPUT_DATA_WIDTH-1:0] r_valid_input_tdata;
     reg [(INPUT_DATA_WIDTH-1)/8:0] r_valid_input_tkeep;
@@ -86,9 +96,15 @@ module test_hardware_server
     wire [(OUTPUT_DATA_WIDTH-1)/8:0] w_computed_tkeep_bit_shifted;
 
     // Assignments
+    assign w_aresetp = ~i_aresetn;
+    // Input Data Stream
+    assign w_fifo_tready = r_input_tready;
+    assign w_input_metadata_tdata = {i_local_port_rx[15:0], i_remote_port_rx[15:0], i_remote_ip_rx[31:0], i_input_TDATA[INPUT_DATA_WIDTH-1:0]};
+    assign w_input_metadata_tkeep = {{6{1'b1}}, i_input_TKEEP[(INPUT_DATA_WIDTH-1)/8:0]};
+    // Data Computation
     assign w_computed_tdata_byte_shifted = r_computed_tdata[7:0] << (OUTPUT_DATA_WIDTH - 8);
     assign w_computed_tkeep_bit_shifted = 1'b1 << ((OUTPUT_DATA_WIDTH - 1) / 8);
-    assign o_input_TREADY = r_input_tready;
+    // Output Data Stream
     assign o_output_TVALID = r_output_tvalid;
     assign o_output_TDATA = r_output_tdata;
     assign o_output_TKEEP = r_output_tkeep;
@@ -96,6 +112,32 @@ module test_hardware_server
     assign o_remote_ip_tx = r_remote_ip_tx;
     assign o_remote_port_tx = r_remote_port_tx;
     assign o_local_port_tx = r_local_port_tx;
+
+    // Modules
+    zero_latency_axis_fifo #(
+        .DATA_WIDTH(METADATA_WIDTH),
+	    .FIFO_DEPTH(512),
+	    .HAS_DATA(1),
+	    .HAS_KEEP(1),
+	    .HAS_LAST(1),
+	    .RAM_STYLE("auto")
+    )
+    input_fifo
+    (
+        .clk(i_clk),
+	    .rst(w_aresetp),
+	    .s_axis_tdata(w_input_metadata_tdata),
+	    .s_axis_tkeep(w_input_metadata_tkeep),
+	    .s_axis_tlast(i_input_TLAST),
+	    .s_axis_tvalid(i_input_TVALID),
+	    .m_axis_tready(w_fifo_tready),
+	    .s_axis_tready(o_input_TREADY),
+	    .m_axis_tdata(w_fifo_metadata_tdata),
+	    .m_axis_tkeep(w_fifo_metadata_tkeep),
+	    .m_axis_tlast(w_fifo_tlast),
+	    .m_axis_tvalid(w_fifo_tvalid),
+	    .data_cnt() // Shows number of entries currently in FIFO, not used in this module
+    );
 
     always @(posedge i_clk)
     begin
@@ -132,17 +174,17 @@ module test_hardware_server
                 STATE_IDLE:
                 // Read incoming packets and network information
                 begin
-                    if (i_input_TVALID == 1'b1)
+                    if (w_fifo_tvalid == 1'b1)
                     begin
                         if (r_input_tready == 1'b1)
                         begin
                             r_input_tready <= 1'b0;
-                            r_input_tdata <= i_input_TDATA;
-                            r_input_tkeep <= i_input_TKEEP;
-                            r_input_tlast <= i_input_TLAST;
-                            r_remote_ip_rx <= i_remote_ip_rx;
-                            r_remote_port_rx <= i_remote_port_rx;
-                            r_local_port_rx <= i_local_port_rx;
+                            r_input_tdata <= w_fifo_metadata_tdata[INPUT_DATA_WIDTH-1:0];
+                            r_input_tkeep <= w_fifo_metadata_tkeep[(INPUT_DATA_WIDTH-1)/8:0];
+                            r_input_tlast <= w_fifo_tlast;
+                            r_remote_ip_rx <= w_fifo_metadata_tdata[METADATA_WIDTH-33:METADATA_WIDTH-64];
+                            r_remote_port_rx <= w_fifo_metadata_tdata[METADATA_WIDTH-17:METADATA_WIDTH-32];
+                            r_local_port_rx <= w_fifo_metadata_tdata[METADATA_WIDTH-1:METADATA_WIDTH-16];
                             r_core_state <= STATE_INPUT_DATA_CONVERSION;
                         end
                         else
@@ -176,8 +218,6 @@ module test_hardware_server
                     r_computed_tdata <= (r_valid_input_tdata << 1);
                     r_computed_tkeep <= (r_valid_input_tkeep << 1) + 1;
                     r_output_tlast <= r_input_tlast;
-                    r_valid_input_tdata <= 0;
-                    r_valid_input_tkeep <= 0;
                     r_core_state <= STATE_OUTPUT_DATA_CONVERSION;
                 end
                 STATE_OUTPUT_DATA_CONVERSION:
@@ -211,11 +251,25 @@ module test_hardware_server
                     end
                     else if (r_output_tvalid == 1'b1 && i_output_TREADY == 1'b1)
                     begin
+                        r_core_state <= STATE_IDLE;
+                        r_input_tready <= 1'b0;
+                        r_input_tdata <= 0;
+                        r_input_tkeep <= 0;
+                        r_input_tlast <= 0;
+                        r_remote_ip_rx <= 0;
+                        r_remote_port_rx <= 0;
+                        r_local_port_rx <= 0;
+                        r_valid_input_tdata <= 0;
+                        r_valid_input_tkeep <= 0;
+                        r_computed_tdata <= 0;
+                        r_computed_tkeep <= 0;
                         r_output_tvalid <= 1'b0;
                         r_output_tdata <= 0;
                         r_output_tkeep <= 0;
                         r_output_tlast <= 0;
-                        r_core_state <= STATE_IDLE;
+                        r_remote_ip_tx <= 0;
+                        r_remote_port_tx <= 0;
+                        r_local_port_tx <= 0;
                     end
                 end
             endcase

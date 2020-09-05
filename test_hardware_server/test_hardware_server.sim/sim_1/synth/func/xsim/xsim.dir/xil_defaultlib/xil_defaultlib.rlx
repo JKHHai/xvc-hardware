@@ -2,5 +2,5 @@
 2019.1
 May 24 2019
 14:51:52
-/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server.sim/sim_1/synth/func/xsim/tb_test_hardware_server_func_synth.v,1598389887,verilog,,,,glbl;test_hardware_server,,,,,,,,
-/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server.srcs/sim_1/new/tb_test_hardware_server.sv,1598389169,systemVerilog,,,,tb_test_hardware_server,,,,,,,,
+/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server.sim/sim_1/synth/func/xsim/tb_test_hardware_server_func_synth.v,1598469083,verilog,,,,glbl;test_hardware_server;zero_latency_axis_fifo,,,,,,,,
+/home/justin/paulchowresearch2020/xvc/xvc-hardware/test_hardware_server/test_hardware_server.srcs/sim_1/new/tb_test_hardware_server.sv,1598467727,systemVerilog,,,,tb_test_hardware_server,,,,,,,,
