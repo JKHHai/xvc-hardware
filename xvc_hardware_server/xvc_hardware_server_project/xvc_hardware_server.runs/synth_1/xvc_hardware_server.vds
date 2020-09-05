@@ -1,0 +1,773 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Fri Sep  4 15:12:55 2020
+# Process ID: 26733
+# Current directory: /home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.runs/synth_1
+# Command line: vivado -log xvc_hardware_server.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source xvc_hardware_server.tcl
+# Log file: /home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.runs/synth_1/xvc_hardware_server.vds
+# Journal file: /home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source xvc_hardware_server.tcl -notrace
+Command: synth_design -top xvc_hardware_server -part xczu19eg-ffvc1760-2-i
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xczu19eg'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu19eg'
+INFO: [Common 17-1540] The version limit for your license is '2020.05' and has expired for new software. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for any updates or new releases.
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 26757 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1617.094 ; gain = 167.625 ; free physical = 60584 ; free virtual = 125924
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'xvc_hardware_server' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:23]
+	Parameter INPUT_AXIS_DATA_WIDTH bound to: 512 - type: integer 
+	Parameter OUTPUT_AXIS_DATA_WIDTH bound to: 512 - type: integer 
+	Parameter DEBUG_BRIDGE_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DEBUG_BRIDGE_ADDRESS_WIDTH bound to: 8 - type: integer 
+	Parameter STATE_IDLE bound to: 4'b0000 
+	Parameter STATE_AXI_STREAM_DATA_CONVERSION bound to: 4'b0001 
+	Parameter STATE_SETUP bound to: 4'b0010 
+	Parameter STATE_WRITE_TO_DEBUG_BRIDGE bound to: 4'b0011 
+	Parameter STATE_READ_TDO bound to: 4'b0100 
+	Parameter STATE_TDO_REVERSAL bound to: 4'b0101 
+	Parameter STATE_TDO_SHIFT_TO_MSB bound to: 4'b0110 
+	Parameter STATE_SEND_TDO bound to: 4'b0111 
+	Parameter METADATA_WIDTH bound to: 576 - type: integer 
+	Parameter TDO_CAPACITY bound to: 16 - type: integer 
+	Parameter NEAR_TDO_CAPACITY bound to: 480 - type: integer 
+WARNING: [Synth 8-324] index 504 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 496 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 488 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 480 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 472 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 464 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 456 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 448 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 64 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 440 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 72 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 432 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 80 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 424 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 88 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 416 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 96 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 408 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 104 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 400 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 112 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 392 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 120 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 384 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 128 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 376 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 136 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 368 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 144 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 360 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 152 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 352 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 160 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 344 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 168 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 336 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 176 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 328 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 184 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 320 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 192 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 312 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 200 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 304 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 208 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 296 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 216 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 288 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 224 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 280 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 232 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 272 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 240 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 264 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 248 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 256 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 256 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 248 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 264 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 240 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 272 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 232 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 280 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 224 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 288 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 216 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 296 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 208 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 304 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 200 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 312 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 192 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 320 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 184 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 328 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 176 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 336 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 168 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 344 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 160 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 352 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 152 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 360 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 144 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 368 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 136 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 376 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 128 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 384 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 120 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 392 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 112 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 400 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 104 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 408 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 96 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 416 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 88 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 424 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+WARNING: [Synth 8-324] index 80 out of range [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:208]
+INFO: [Common 17-14] Message 'Synth 8-324' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-6157] synthesizing module 'zero_latency_axis_fifo' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/imports/zero_latency_axis_fifo.v:1]
+	Parameter DATA_WIDTH bound to: 576 - type: integer 
+	Parameter FIFO_DEPTH bound to: 512 - type: integer 
+	Parameter HAS_DATA bound to: 1 - type: integer 
+	Parameter HAS_KEEP bound to: 1 - type: integer 
+	Parameter HAS_LAST bound to: 1 - type: integer 
+INFO: [Synth 8-5811] Detected attribute (* ram_style  = "auto" *) on module zero_latency_axis_fifo 
+	Parameter RAM_STYLE bound to: auto - type: string 
+	Parameter LUT_DEPTH bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'zero_latency_axis_fifo' (1#1) [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/imports/zero_latency_axis_fifo.v:1]
+WARNING: [Synth 8-689] width (577) of port connection 's_axis_tkeep' does not match port width (72) of module 'zero_latency_axis_fifo' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:234]
+INFO: [Synth 8-6157] synthesizing module 'debug_bridge_writer' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:22]
+	Parameter DEBUG_BRIDGE_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DEBUG_BRIDGE_ADDRESS_WIDTH bound to: 8 - type: integer 
+	Parameter STATE_IDLE bound to: 4'b0000 
+	Parameter STATE_AXI_LITE_WRITE bound to: 4'b0001 
+	Parameter STATE_AXI_LITE_READ bound to: 4'b0010 
+	Parameter STATE_WRITE_LENGTH bound to: 4'b0011 
+	Parameter STATE_WRITE_TMS bound to: 4'b0100 
+	Parameter STATE_WRITE_TDI bound to: 4'b0101 
+	Parameter STATE_WRITE_CTRL bound to: 4'b0110 
+	Parameter STATE_READ_CTRL bound to: 4'b0111 
+	Parameter STATE_READ_TDO bound to: 4'b1000 
+	Parameter STATE_SEND_TDO bound to: 4'b1001 
+	Parameter AXI_LITE_OPCODE_DO_NOTHING bound to: 2'b00 
+	Parameter AXI_LITE_OPCODE_WRITE bound to: 2'b01 
+	Parameter AXI_LITE_OPCODE_READ bound to: 2'b10 
+	Parameter AXI_LITE_ADDR_OFFSET_LENGTH bound to: 8'b00000000 
+	Parameter AXI_LITE_ADDR_OFFSET_TMS bound to: 8'b00000100 
+	Parameter AXI_LITE_ADDR_OFFSET_TDI bound to: 8'b00001000 
+	Parameter AXI_LITE_ADDR_OFFSET_TDO bound to: 8'b00001100 
+	Parameter AXI_LITE_ADDR_OFFSET_CTRL bound to: 8'b00010000 
+INFO: [Synth 8-6157] synthesizing module 'easy_axilite_master' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/imports/easy_axilite_master.v:2]
+	Parameter ADDR_LEN bound to: 8 - type: integer 
+	Parameter DATA_LEN bound to: 32 - type: integer 
+	Parameter IDLE bound to: 2'b00 
+	Parameter WAIT_WRITE bound to: 2'b01 
+	Parameter WAIT_READ bound to: 2'b10 
+	Parameter WRITE bound to: 2'b01 
+	Parameter READ bound to: 2'b10 
+INFO: [Synth 8-155] case statement is not full and has no default [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/imports/easy_axilite_master.v:78]
+INFO: [Synth 8-6155] done synthesizing module 'easy_axilite_master' (2#1) [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/imports/easy_axilite_master.v:2]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:206]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:235]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:182]
+INFO: [Synth 8-6155] done synthesizing module 'debug_bridge_writer' (3#1) [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:22]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:319]
+WARNING: [Synth 8-6014] Unused sequential element r_input_tlast_reg was removed.  [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:296]
+INFO: [Synth 8-6155] done synthesizing module 'xvc_hardware_server' (4#1) [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.srcs/sources_1/new/xvc_hardware_server.v:23]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1672.844 ; gain = 223.375 ; free physical = 60594 ; free virtual = 125934
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1682.750 ; gain = 233.281 ; free physical = 60596 ; free virtual = 125936
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xczu19eg-ffvc1760-2-i
+INFO: [Synth 8-6742] Reading net delay rules and data
+INFO: [Device 21-403] Loading part xczu19eg-ffvc1760-2-i
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1702.660 ; gain = 253.191 ; free physical = 60595 ; free virtual = 125936
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'r_core_state_reg' in module 'debug_bridge_writer'
+INFO: [Synth 8-5544] ROM "r_length" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "r_axi_lite_addr" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "r_axi_lite_rdata" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-6904] The RAM "zero_latency_axis_fifo:/axis_lutram_reg" of size (depth=16 x width=649) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+              STATE_IDLE |                             0000 |                             0000
+      STATE_WRITE_LENGTH |                             0001 |                             0011
+    STATE_AXI_LITE_WRITE |                             0010 |                             0001
+         STATE_WRITE_TMS |                             0011 |                             0100
+         STATE_WRITE_TDI |                             0100 |                             0101
+        STATE_WRITE_CTRL |                             0101 |                             0110
+         STATE_READ_CTRL |                             0110 |                             0111
+     STATE_AXI_LITE_READ |                             0111 |                             0010
+          STATE_READ_TDO |                             1000 |                             1000
+          STATE_SEND_TDO |                             1001 |                             1001
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'r_core_state_reg' using encoding 'sequential' in module 'debug_bridge_writer'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1702.660 ; gain = 253.191 ; free physical = 60560 ; free virtual = 125901
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
+	   2 Input      9 Bit       Adders := 3     
+	   4 Input      9 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 6     
+	   3 Input      4 Bit       Adders := 1     
++---Registers : 
+	              649 Bit    Registers := 2     
+	              512 Bit    Registers := 4     
+	               64 Bit    Registers := 3     
+	               32 Bit    Registers := 14    
+	               16 Bit    Registers := 4     
+	                9 Bit    Registers := 3     
+	                8 Bit    Registers := 3     
+	                4 Bit    Registers := 3     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 15    
++---RAMs : 
+	             324K Bit         RAMs := 1     
+	              10K Bit         RAMs := 1     
++---Muxes : 
+	   2 Input    649 Bit        Muxes := 1     
+	   2 Input    576 Bit        Muxes := 1     
+	   2 Input    512 Bit        Muxes := 4     
+	   8 Input    512 Bit        Muxes := 2     
+	   2 Input     72 Bit        Muxes := 1     
+	   2 Input     64 Bit        Muxes := 7     
+	   8 Input     64 Bit        Muxes := 2     
+	   2 Input     32 Bit        Muxes := 15    
+	  10 Input     32 Bit        Muxes := 3     
+	   8 Input     32 Bit        Muxes := 6     
+	   2 Input     16 Bit        Muxes := 6     
+	   8 Input     16 Bit        Muxes := 2     
+	  10 Input      8 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 7     
+	  10 Input      4 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+	   3 Input      4 Bit        Muxes := 1     
+	   3 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 2     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 5     
+	   3 Input      2 Bit        Muxes := 1     
+	  10 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 32    
+	   4 Input      1 Bit        Muxes := 14    
+	   5 Input      1 Bit        Muxes := 2     
+	   6 Input      1 Bit        Muxes := 1     
+	  10 Input      1 Bit        Muxes := 8     
+	   8 Input      1 Bit        Muxes := 12    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module xvc_hardware_server 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
++---Registers : 
+	              512 Bit    Registers := 4     
+	               64 Bit    Registers := 3     
+	               32 Bit    Registers := 7     
+	               16 Bit    Registers := 4     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input    512 Bit        Muxes := 4     
+	   8 Input    512 Bit        Muxes := 2     
+	   2 Input     64 Bit        Muxes := 7     
+	   8 Input     64 Bit        Muxes := 2     
+	   2 Input     32 Bit        Muxes := 10    
+	   8 Input     32 Bit        Muxes := 6     
+	   2 Input     16 Bit        Muxes := 6     
+	   8 Input     16 Bit        Muxes := 2     
+	   3 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 19    
+	   8 Input      1 Bit        Muxes := 12    
+Module zero_latency_axis_fifo 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 3     
+	   4 Input      9 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 6     
+	   3 Input      4 Bit       Adders := 1     
++---Registers : 
+	              649 Bit    Registers := 2     
+	                9 Bit    Registers := 3     
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 5     
++---RAMs : 
+	             324K Bit         RAMs := 1     
+	              10K Bit         RAMs := 1     
++---Muxes : 
+	   2 Input    649 Bit        Muxes := 1     
+	   2 Input    576 Bit        Muxes := 1     
+	   2 Input     72 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
+Module easy_axilite_master 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 2     
+	                8 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 7     
++---Muxes : 
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 7     
+	   4 Input      1 Bit        Muxes := 13    
+	   5 Input      1 Bit        Muxes := 2     
+Module debug_bridge_writer 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 5     
+	                8 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 5     
+	  10 Input     32 Bit        Muxes := 3     
+	  10 Input      8 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 7     
+	  10 Input      4 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+	   3 Input      4 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	  10 Input      2 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+	  10 Input      1 Bit        Muxes := 8     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 1968 (col length:264)
+BRAMs: 1968 (col length: RAMB18 264 RAMB36 132)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-6904] The RAM "input_fifo/axis_lutram_reg" of size (depth=16 x width=649) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-3886] merging instance 'dbw/r_axi_lite_addr_reg[0]' (FDRE) to 'dbw/r_axi_lite_addr_reg[1]'
+INFO: [Synth 8-3886] merging instance 'dbw/r_axi_lite_addr_reg[1]' (FDRE) to 'dbw/r_axi_lite_addr_reg[5]'
+INFO: [Synth 8-3886] merging instance 'dbw/r_axi_lite_addr_reg[5]' (FDRE) to 'dbw/r_axi_lite_addr_reg[6]'
+INFO: [Synth 8-3886] merging instance 'dbw/r_axi_lite_addr_reg[6]' (FDRE) to 'dbw/r_axi_lite_addr_reg[7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (dbw/\r_axi_lite_addr_reg[7] )
+INFO: [Synth 8-3886] merging instance 'dbw/debug_bridge_interface/m_axi_awaddr_reg_reg[0]' (FDRE) to 'dbw/debug_bridge_interface/m_axi_awaddr_reg_reg[1]'
+INFO: [Synth 8-3886] merging instance 'dbw/debug_bridge_interface/m_axi_awaddr_reg_reg[1]' (FDRE) to 'dbw/debug_bridge_interface/m_axi_awaddr_reg_reg[5]'
+INFO: [Synth 8-3886] merging instance 'dbw/debug_bridge_interface/m_axi_awaddr_reg_reg[5]' (FDRE) to 'dbw/debug_bridge_interface/m_axi_awaddr_reg_reg[6]'
+INFO: [Synth 8-3886] merging instance 'dbw/debug_bridge_interface/m_axi_awaddr_reg_reg[6]' (FDRE) to 'dbw/debug_bridge_interface/m_axi_awaddr_reg_reg[7]'
+INFO: [Synth 8-3886] merging instance 'dbw/debug_bridge_interface/m_axi_araddr_reg_reg[0]' (FDRE) to 'dbw/debug_bridge_interface/m_axi_araddr_reg_reg[1]'
+INFO: [Synth 8-3886] merging instance 'dbw/debug_bridge_interface/m_axi_araddr_reg_reg[1]' (FDRE) to 'dbw/debug_bridge_interface/m_axi_araddr_reg_reg[5]'
+INFO: [Synth 8-3886] merging instance 'dbw/debug_bridge_interface/m_axi_araddr_reg_reg[5]' (FDRE) to 'dbw/debug_bridge_interface/m_axi_araddr_reg_reg[6]'
+INFO: [Synth 8-3886] merging instance 'dbw/debug_bridge_interface/m_axi_araddr_reg_reg[6]' (FDRE) to 'dbw/debug_bridge_interface/m_axi_araddr_reg_reg[7]'
+INFO: [Synth 8-3886] merging instance 'dbw/r_tdo_data_reg[0]' (FDRE) to 'dbw/r_tdo_data_reg[1]'
+INFO: [Synth 8-3886] merging instance 'dbw/r_tdo_data_reg[1]' (FDRE) to 'dbw/r_tdo_data_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dbw/r_tdo_data_reg[2]' (FDRE) to 'dbw/r_tdo_data_reg[3]'
+INFO: [Synth 8-3886] merging instance 'dbw/r_tdo_data_reg[3]' (FDRE) to 'dbw/r_tdo_data_reg[4]'
+INFO: [Synth 8-3886] merging instance 'dbw/r_tdo_data_reg[4]' (FDRE) to 'dbw/r_tdo_data_reg[5]'
+INFO: [Synth 8-3886] merging instance 'dbw/r_tdo_data_reg[5]' (FDRE) to 'dbw/r_tdo_data_reg[6]'
+INFO: [Synth 8-3886] merging instance 'dbw/r_tdo_data_reg[6]' (FDRE) to 'dbw/r_tdo_data_reg[7]'
+INFO: [Synth 8-3886] merging instance 'dbw/r_tdo_data_reg[7]' (FDRE) to 'dbw/r_tdo_data_reg[8]'
+INFO: [Synth 8-3886] merging instance 'dbw/r_tdo_data_reg[8]' (FDRE) to 'dbw/r_tdo_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'dbw/r_tdo_data_reg[9]' (FDRE) to 'dbw/r_tdo_data_reg[10]'
+INFO: [Synth 8-3886] merging instance 'dbw/r_tdo_data_reg[10]' (FDRE) to 'dbw/r_tdo_data_reg[11]'
+INFO: [Synth 8-3886] merging instance 'dbw/r_tdo_data_reg[11]' (FDRE) to 'dbw/r_tdo_data_reg[12]'
+INFO: [Synth 8-3886] merging instance 'dbw/r_tdo_data_reg[12]' (FDRE) to 'dbw/r_tdo_data_reg[13]'
+INFO: [Synth 8-3886] merging instance 'dbw/r_tdo_data_reg[13]' (FDRE) to 'dbw/r_tdo_data_reg[14]'
+INFO: [Synth 8-3886] merging instance 'dbw/r_tdo_data_reg[14]' (FDRE) to 'dbw/r_tdo_data_reg[15]'
+INFO: [Synth 8-3886] merging instance 'dbw/r_tdo_data_reg[15]' (FDRE) to 'dbw/r_tdo_data_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dbw/r_tdo_data_reg[16]' (FDRE) to 'dbw/r_tdo_data_reg[17]'
+INFO: [Synth 8-3886] merging instance 'dbw/r_tdo_data_reg[17]' (FDRE) to 'dbw/r_tdo_data_reg[18]'
+INFO: [Synth 8-3886] merging instance 'dbw/r_tdo_data_reg[18]' (FDRE) to 'dbw/r_tdo_data_reg[19]'
+INFO: [Synth 8-3886] merging instance 'dbw/r_tdo_data_reg[19]' (FDRE) to 'dbw/r_tdo_data_reg[20]'
+INFO: [Synth 8-3886] merging instance 'dbw/r_tdo_data_reg[20]' (FDRE) to 'dbw/r_tdo_data_reg[21]'
+INFO: [Synth 8-3886] merging instance 'dbw/r_tdo_data_reg[21]' (FDRE) to 'dbw/r_tdo_data_reg[22]'
+INFO: [Synth 8-3886] merging instance 'dbw/r_tdo_data_reg[22]' (FDRE) to 'dbw/r_tdo_data_reg[23]'
+INFO: [Synth 8-3886] merging instance 'dbw/r_tdo_data_reg[23]' (FDRE) to 'dbw/r_tdo_data_reg[24]'
+INFO: [Synth 8-3886] merging instance 'dbw/r_tdo_data_reg[24]' (FDRE) to 'dbw/r_tdo_data_reg[25]'
+INFO: [Synth 8-3886] merging instance 'dbw/r_tdo_data_reg[25]' (FDRE) to 'dbw/r_tdo_data_reg[26]'
+INFO: [Synth 8-3886] merging instance 'dbw/r_tdo_data_reg[26]' (FDRE) to 'dbw/r_tdo_data_reg[27]'
+INFO: [Synth 8-3886] merging instance 'dbw/r_tdo_data_reg[27]' (FDRE) to 'dbw/r_tdo_data_reg[28]'
+INFO: [Synth 8-3886] merging instance 'dbw/r_tdo_data_reg[28]' (FDRE) to 'dbw/r_tdo_data_reg[29]'
+INFO: [Synth 8-3886] merging instance 'dbw/r_tdo_data_reg[29]' (FDRE) to 'dbw/r_tdo_data_reg[30]'
+INFO: [Synth 8-3886] merging instance 'dbw/r_tdo_data_reg[30]' (FDRE) to 'dbw/r_tdo_data_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (dbw/\r_tdo_data_reg[31] )
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'dbw/r_axi_lite_rdata_reg[31]/Q' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'dbw/r_axi_lite_rdata_reg[30]/Q' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'dbw/r_axi_lite_rdata_reg[29]/Q' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'dbw/r_axi_lite_rdata_reg[28]/Q' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'dbw/r_axi_lite_rdata_reg[27]/Q' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'dbw/r_axi_lite_rdata_reg[26]/Q' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'dbw/r_axi_lite_rdata_reg[25]/Q' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'dbw/r_axi_lite_rdata_reg[24]/Q' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'dbw/r_axi_lite_rdata_reg[23]/Q' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'dbw/r_axi_lite_rdata_reg[22]/Q' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'dbw/r_axi_lite_rdata_reg[21]/Q' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'dbw/r_axi_lite_rdata_reg[20]/Q' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'dbw/r_axi_lite_rdata_reg[19]/Q' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'dbw/r_axi_lite_rdata_reg[18]/Q' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'dbw/r_axi_lite_rdata_reg[17]/Q' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'dbw/r_axi_lite_rdata_reg[16]/Q' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'dbw/r_axi_lite_rdata_reg[15]/Q' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'dbw/r_axi_lite_rdata_reg[14]/Q' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'dbw/r_axi_lite_rdata_reg[13]/Q' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'dbw/r_axi_lite_rdata_reg[12]/Q' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'dbw/r_axi_lite_rdata_reg[11]/Q' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'dbw/r_axi_lite_rdata_reg[10]/Q' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'dbw/r_axi_lite_rdata_reg[9]/Q' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'dbw/r_axi_lite_rdata_reg[8]/Q' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'dbw/r_axi_lite_rdata_reg[7]/Q' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'dbw/r_axi_lite_rdata_reg[6]/Q' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'dbw/r_axi_lite_rdata_reg[5]/Q' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'dbw/r_axi_lite_rdata_reg[4]/Q' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'dbw/r_axi_lite_rdata_reg[3]/Q' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'dbw/r_axi_lite_rdata_reg[2]/Q' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'dbw/r_axi_lite_rdata_reg[1]/Q' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'dbw/r_axi_lite_rdata_reg[0]/Q' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/debug_bridge_writer_project/debug_bridge_writer.srcs/sources_1/new/debug_bridge_writer.v:118]
+INFO: [Synth 8-3886] merging instance 'r_length_reg[22]' (FDRE) to 'r_length_reg[31]'
+INFO: [Synth 8-3886] merging instance 'r_length_reg[19]' (FDRE) to 'r_length_reg[31]'
+INFO: [Synth 8-3886] merging instance 'r_length_reg[23]' (FDRE) to 'r_length_reg[31]'
+INFO: [Synth 8-3886] merging instance 'r_length_reg[18]' (FDRE) to 'r_length_reg[31]'
+INFO: [Synth 8-3886] merging instance 'r_length_reg[24]' (FDRE) to 'r_length_reg[31]'
+INFO: [Synth 8-3886] merging instance 'r_length_reg[21]' (FDRE) to 'r_length_reg[31]'
+INFO: [Synth 8-3886] merging instance 'r_length_reg[20]' (FDRE) to 'r_length_reg[31]'
+INFO: [Synth 8-3886] merging instance 'r_length_reg[17]' (FDRE) to 'r_length_reg[31]'
+INFO: [Synth 8-3886] merging instance 'r_length_reg[26]' (FDRE) to 'r_length_reg[31]'
+INFO: [Synth 8-3886] merging instance 'r_length_reg[25]' (FDRE) to 'r_length_reg[31]'
+INFO: [Synth 8-3886] merging instance 'r_length_reg[28]' (FDRE) to 'r_length_reg[31]'
+INFO: [Synth 8-3886] merging instance 'r_length_reg[27]' (FDRE) to 'r_length_reg[31]'
+INFO: [Synth 8-3886] merging instance 'r_length_reg[31]' (FDRE) to 'r_length_reg[30]'
+INFO: [Synth 8-3886] merging instance 'r_length_reg[30]' (FDRE) to 'r_length_reg[29]'
+INFO: [Synth 8-3886] merging instance 'r_length_reg[29]' (FDRE) to 'r_length_reg[16]'
+INFO: [Synth 8-3886] merging instance 'r_length_reg[10]' (FDRE) to 'r_length_reg[16]'
+INFO: [Synth 8-3886] merging instance 'r_length_reg[9]' (FDRE) to 'r_length_reg[16]'
+INFO: [Synth 8-3886] merging instance 'r_length_reg[8]' (FDRE) to 'r_length_reg[16]'
+INFO: [Synth 8-3886] merging instance 'r_length_reg[15]' (FDRE) to 'r_length_reg[16]'
+INFO: [Synth 8-3886] merging instance 'r_length_reg[11]' (FDRE) to 'r_length_reg[16]'
+INFO: [Synth 8-3886] merging instance 'r_length_reg[14]' (FDRE) to 'r_length_reg[16]'
+INFO: [Synth 8-3886] merging instance 'r_length_reg[12]' (FDRE) to 'r_length_reg[16]'
+INFO: [Synth 8-3886] merging instance 'r_length_reg[16]' (FDRE) to 'r_length_reg[13]'
+INFO: [Synth 8-3886] merging instance 'r_length_reg[13]' (FDRE) to 'r_length_reg[7]'
+INFO: [Synth 8-3886] merging instance 'r_length_reg[7]' (FDRE) to 'r_length_reg[6]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_length_reg[6] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:51 . Memory (MB): peak = 2684.324 ; gain = 1234.855 ; free physical = 59727 ; free virtual = 125068
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping  Report (see note below)
++------------------------+---------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+|Module Name             | RTL Object    | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | Cascade Heights | 
++------------------------+---------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+|zero_latency_axis_fifo: | axis_bram_reg | 512 x 649(READ_FIRST)  | W |   | 512 x 649(WRITE_FIRST) |   | R | Port A and B     | 1      | 9      |                 | 
++------------------------+---------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+Distributed RAM: Preliminary Mapping  Report (see note below)
++------------+-----------------+-----------+----------------------+-----------------+
+|Module Name | RTL Object      | Inference | Size (Depth x Width) | Primitives      | 
++------------+-----------------+-----------+----------------------+-----------------+
+|input_fifo  | axis_lutram_reg | Implied   | 16 x 649             | RAM32M16 x 47   | 
++------------+-----------------+-----------+----------------------+-----------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:32 ; elapsed = 00:00:52 . Memory (MB): peak = 2684.324 ; gain = 1234.855 ; free physical = 59730 ; free virtual = 125070
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping  Report
++------------------------+---------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+|Module Name             | RTL Object    | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | Cascade Heights | 
++------------------------+---------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+|zero_latency_axis_fifo: | axis_bram_reg | 512 x 649(READ_FIRST)  | W |   | 512 x 649(WRITE_FIRST) |   | R | Port A and B     | 1      | 9      |                 | 
++------------------------+---------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+
+
+Distributed RAM: Final Mapping  Report
++------------+-----------------+-----------+----------------------+-----------------+
+|Module Name | RTL Object      | Inference | Size (Depth x Width) | Primitives      | 
++------------+-----------------+-----------+----------------------+-----------------+
+|input_fifo  | axis_lutram_reg | Implied   | 16 x 649             | RAM32M16 x 47   | 
++------------+-----------------+-----------+----------------------+-----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3886] merging instance 'input_fifo/lutram_rd_idx_reg_rep[0]' (FDRE) to 'input_fifo/lutram_rd_idx_reg[0]'
+INFO: [Synth 8-3886] merging instance 'input_fifo/lutram_rd_idx_reg_rep[1]' (FDRE) to 'input_fifo/lutram_rd_idx_reg[1]'
+INFO: [Synth 8-3886] merging instance 'input_fifo/lutram_rd_idx_reg_rep[2]' (FDRE) to 'input_fifo/lutram_rd_idx_reg[2]'
+INFO: [Synth 8-3886] merging instance 'input_fifo/lutram_rd_idx_reg_rep[3]' (FDRE) to 'input_fifo/lutram_rd_idx_reg[3]'
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:32 ; elapsed = 00:00:53 . Memory (MB): peak = 2684.324 ; gain = 1234.855 ; free physical = 59729 ; free virtual = 125070
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:34 ; elapsed = 00:00:54 . Memory (MB): peak = 2684.324 ; gain = 1234.855 ; free physical = 59730 ; free virtual = 125071
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:34 ; elapsed = 00:00:54 . Memory (MB): peak = 2684.324 ; gain = 1234.855 ; free physical = 59730 ; free virtual = 125070
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:34 ; elapsed = 00:00:54 . Memory (MB): peak = 2684.324 ; gain = 1234.855 ; free physical = 59729 ; free virtual = 125070
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:34 ; elapsed = 00:00:54 . Memory (MB): peak = 2684.324 ; gain = 1234.855 ; free physical = 59729 ; free virtual = 125070
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:34 ; elapsed = 00:00:54 . Memory (MB): peak = 2684.324 ; gain = 1234.855 ; free physical = 59728 ; free virtual = 125069
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:34 ; elapsed = 00:00:54 . Memory (MB): peak = 2684.324 ; gain = 1234.855 ; free physical = 59728 ; free virtual = 125068
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     1|
+|2     |CARRY8   |     8|
+|3     |LUT1     |    34|
+|4     |LUT2     |   223|
+|5     |LUT3     |   336|
+|6     |LUT4     |   200|
+|7     |LUT5     |   113|
+|8     |LUT6     |    51|
+|9     |MUXF7    |     2|
+|10    |RAM32M16 |    11|
+|11    |RAMB36E2 |     3|
+|12    |FDRE     |   722|
+|13    |IBUF     |   217|
+|14    |OBUF     |   714|
++------+---------+------+
+
+Report Instance Areas: 
++------+---------------------------+-----------------------+------+
+|      |Instance                   |Module                 |Cells |
++------+---------------------------+-----------------------+------+
+|1     |top                        |                       |  2635|
+|2     |  dbw                      |debug_bridge_writer    |   313|
+|3     |    debug_bridge_interface |easy_axilite_master    |    77|
+|4     |  input_fifo               |zero_latency_axis_fifo |   390|
++------+---------------------------+-----------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:34 ; elapsed = 00:00:54 . Memory (MB): peak = 2684.324 ; gain = 1234.855 ; free physical = 59728 ; free virtual = 125068
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 96 critical warnings and 114 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:34 ; elapsed = 00:00:54 . Memory (MB): peak = 2684.324 ; gain = 1234.855 ; free physical = 59730 ; free virtual = 125070
+Synthesis Optimization Complete : Time (s): cpu = 00:00:34 ; elapsed = 00:00:54 . Memory (MB): peak = 2684.332 ; gain = 1234.855 ; free physical = 59730 ; free virtual = 125070
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 239 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2740.352 ; gain = 0.000 ; free physical = 59647 ; free virtual = 124988
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 229 instances were transformed.
+  BUFG => BUFGCE: 1 instances
+  IBUF => IBUF (IBUFCTRL, INBUF): 217 instances
+  RAM32M16 => RAM32M16 (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 11 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+108 Infos, 102 Warnings, 96 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:41 ; elapsed = 00:01:04 . Memory (MB): peak = 2740.352 ; gain = 1352.688 ; free physical = 59746 ; free virtual = 125087
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2740.352 ; gain = 0.000 ; free physical = 59746 ; free virtual = 125086
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint '/home/justin/paulchowresearch2020/xvc/xvc-hardware/xvc_hardware_server/xvc_hardware_server_project/xvc_hardware_server.runs/synth_1/xvc_hardware_server.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file xvc_hardware_server_utilization_synth.rpt -pb xvc_hardware_server_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri Sep  4 15:14:12 2020...
